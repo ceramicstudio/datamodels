@@ -1,17 +1,17 @@
 {
-  "name": "@datamodels/web3-profile",
+  "name": "@datamodels/3id-keychain",
   "version": "0.1.0",
   "author": "3Box Labs",
   "license": "(Apache-2.0 OR MIT)",
-  "homepage": "https://github.com/ceramicnetwork/datamodels#readme",
+  "homepage": "https://github.com/ceramicstudio/datamodels#readme",
   "keywords": [
     "datamodel",
-    "web3"
+    "3id"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ceramicnetwork/datamodels",
-    "directory": "packages/web3-profile"
+    "url": "https://github.com/ceramicstudio/datamodels",
+    "directory": "packages/3id-keychain"
   },
   "module": "dist/model.js",
   "typings": "dist/model.d.ts",
@@ -34,6 +34,6 @@
     "prepublishOnly": "package-check"
   },
   "dependencies": {
-    "@glazed/types": "^0.1.1"
+    "@glazed/types": "^0.1.2"
   }
 }

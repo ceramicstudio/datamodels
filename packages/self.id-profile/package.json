@@ -1,0 +1,39 @@
+{
+  "name": "@datamodels/self.id-profile",
+  "version": "0.1.0",
+  "author": "3Box Labs",
+  "license": "(Apache-2.0 OR MIT)",
+  "homepage": "https://github.com/ceramicstudio/datamodels#readme",
+  "keywords": [
+    "datamodel",
+    "self.id"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ceramicstudio/datamodels",
+    "directory": "packages/self.id-profile"
+  },
+  "module": "dist/model.js",
+  "typings": "dist/model.d.ts",
+  "exports": {
+    "import": "./dist/model.js",
+    "default": "./dist/model.js"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "types": "del types/ && json2ts -i schemas/ -o types/",
+    "build": "tsc",
+    "lint": "eslint --fix",
+    "prepublish": "yarn build",
+    "prepublishOnly": "package-check"
+  },
+  "dependencies": {
+    "@glazed/types": "^0.1.2"
+  }
+}
