@@ -2,7 +2,7 @@ import type { ModelTypeAliases, EncodedManagedModel } from '@glazed/types'
 
 import type { BasicProfile } from '../types/BasicProfile'
 
-export * from '../types/BasicProfile'
+export type { BasicProfile, ImageMetadata, ImageSources } from '../types/BasicProfile'
 
 export type ModelTypes = ModelTypeAliases<
   { BasicProfile: BasicProfile },

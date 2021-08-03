@@ -13,11 +13,13 @@
     "url": "https://github.com/ceramicstudio/datamodels",
     "directory": "packages/self.id-profile"
   },
+  "main": "dist/cjs/model.js",
   "module": "dist/model.js",
   "typings": "dist/model.d.ts",
   "exports": {
     "import": "./dist/model.js",
-    "default": "./dist/model.js"
+    "require": "./dist/cjs/model.js",
+    "default": "./dist/cjs/model.js"
   },
   "files": [
     "dist",
@@ -27,13 +29,13 @@
     "node": ">=14"
   },
   "scripts": {
-    "types": "del types/ && json2ts -i schemas/ -o types/",
-    "build": "tsc",
+    "types": "del types && json2ts -i schemas -o types",
+    "build": "del dist && tsc && tsc --project tsconfig.cjs.json",
     "lint": "eslint --fix",
     "prepublish": "yarn build",
     "prepublishOnly": "package-check"
   },
   "dependencies": {
-    "@glazed/types": "^0.1.2"
+    "@glazed/types": "^0.1.3"
   }
 }

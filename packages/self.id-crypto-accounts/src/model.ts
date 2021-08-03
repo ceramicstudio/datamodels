@@ -2,7 +2,7 @@ import type { ModelTypeAliases, EncodedManagedModel } from '@glazed/types'
 
 import type { CryptoAccountLinks } from '../types/CryptoAccounts'
 
-export * from '../types/CryptoAccounts'
+export type { CryptoAccountLinks } from '../types/CryptoAccounts'
 
 export type ModelTypes = ModelTypeAliases<
   { CryptoAccounts: CryptoAccountLinks },

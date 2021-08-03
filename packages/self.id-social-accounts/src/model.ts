@@ -2,7 +2,7 @@ import type { ModelTypeAliases, EncodedManagedModel } from '@glazed/types'
 
 import type { AlsoKnownAs } from '../types/AlsoKnownAs'
 
-export * from '../types/AlsoKnownAs'
+export type { Account, AlsoKnownAs, Attestation } from '../types/AlsoKnownAs'
 
 export type ModelTypes = ModelTypeAliases<
   { AlsoKnownAs: AlsoKnownAs },

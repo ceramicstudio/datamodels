@@ -2,7 +2,7 @@ import type { ModelTypeAliases, EncodedManagedModel } from '@glazed/types'
 
 import type { ThreeIdKeychain } from '../types/ThreeIdKeychain'
 
-export * from '../types/ThreeIdKeychain'
+export type { AuthData, JWE, ThreeIdKeychain, WrappedJWE } from '../types/ThreeIdKeychain'
 
 export type ModelTypes = ModelTypeAliases<
   { ThreeIdKeychain: ThreeIdKeychain },
