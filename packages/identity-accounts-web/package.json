@@ -1,17 +1,18 @@
 {
-  "name": "@datamodels/self.id-crypto-accounts",
+  "name": "@datamodels/identity-accounts-web",
   "version": "0.1.0",
   "author": "3Box Labs",
   "license": "(Apache-2.0 OR MIT)",
   "homepage": "https://github.com/ceramicstudio/datamodels#readme",
   "keywords": [
     "datamodel",
-    "self.id"
+    "identity",
+    "accounts"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ceramicstudio/datamodels",
-    "directory": "packages/self.id-crypto-accounts"
+    "directory": "packages/identity-accounts-web"
   },
   "main": "dist/cjs/model.js",
   "module": "dist/model.js",

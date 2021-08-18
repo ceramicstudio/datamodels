@@ -1,5 +1,7 @@
 # 3ID Keychain DataModel
 
+DataModel implementation of the **3ID Keychain** schema and definition specified in [CIP-20](https://github.com/ceramicnetwork/CIP/blob/main/CIPs/CIP-20/CIP-20.md).
+
 ## Installation
 
 ```sh
