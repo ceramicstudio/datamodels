@@ -7,6 +7,8 @@
   "scripts": {},
   "devDependencies": {
     "@skypack/package-check": "^0.2.2",
+    "@swc/cli": "^0.1.49",
+    "@swc/core": "^1.2.80",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
     "del-cli": "^4.0.1",
