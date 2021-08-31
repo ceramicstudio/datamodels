@@ -1,0 +1,42 @@
+{
+  "name": "@datamodels/identity-accounts-crypto",
+  "version": "0.1.2",
+  "author": "3Box Labs",
+  "license": "(Apache-2.0 OR MIT)",
+  "homepage": "https://github.com/ceramicstudio/datamodels#readme",
+  "keywords": [
+    "datamodel",
+    "identity",
+    "accounts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ceramicstudio/datamodels",
+    "directory": "packages/identity-accounts-crypto"
+  },
+  "main": "dist/model.cjs",
+  "module": "dist/model.mjs",
+  "typings": "dist/model.d.ts",
+  "exports": {
+    "import": "./dist/model.mjs",
+    "require": "./dist/model.cjs",
+    "default": "./dist/model.cjs"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "types": "del types && json2ts -i schemas -o types",
+    "build": "del dist && tsc && swc src -o ./dist/model.mjs --config-file ../../swc.esm.json && swc src -o ./dist/model.cjs --config-file ../../swc.cjs.json",
+    "lint": "eslint --fix",
+    "prepare": "yarn build",
+    "prepublishOnly": "package-check"
+  },
+  "dependencies": {
+    "@glazed/types": "^0.1.3"
+  }
+}

@@ -1,4 +1,6 @@
-# Glaze DataModels
+# DataModels
+
+## [Index](INDEX.md)
 
 ## License
 
