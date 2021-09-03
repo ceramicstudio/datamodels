@@ -4,18 +4,32 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "prepare": "yarn workspaces run prepare",
+    "test": "jest"
+  },
   "devDependencies": {
+    "@ceramicnetwork/common": "^1.3.0",
+    "@glazed/devtools": "^0.1.3",
     "@skypack/package-check": "^0.2.2",
     "@swc/cli": "^0.1.49",
-    "@swc/core": "^1.2.80",
-    "@typescript-eslint/eslint-plugin": "^4.29.2",
-    "@typescript-eslint/parser": "^4.29.2",
+    "@swc/core": "^1.2.83",
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
     "del-cli": "^4.0.1",
+    "dids": "^2.4.0",
     "eslint": "^7.32.0",
     "eslint-config-3box": "^0.2.0",
+    "jest": "^27.1.0",
+    "jest-environment-ceramic": "^0.14.0",
     "json-schema-to-typescript": "^10.1.4",
+    "key-did-resolver": "^1.4.0",
     "prettier": "^2.3.0",
-    "typescript": "^4.2.3"
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.2"
+  },
+  "jest": {
+    "preset": "ts-jest"
   }
 }

@@ -23,6 +23,7 @@
   },
   "files": [
     "dist",
+    "schemas",
     "types"
   ],
   "engines": {
