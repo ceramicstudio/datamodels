@@ -6,12 +6,9 @@ Want to contribute to this project? Great!
 
 Before you begin, make sure you have a good understanding of [DataModels](https://developers.ceramic.network/tools/glaze/datamodel/) and [Ceramic](https://developers.ceramic.network/) in general.
 
-## Opening issues
+## Discussions
 
-Please use one of the following templates to open an issue:
-
-- [Bug report](https://github.com/ceramicstudio/datamodels/new?template=bug_report.md), if you think there is a bug in one of the published models.
-- [Model request](https://github.com/ceramicstudio/datamodels/new?template=model_request.md), if you have idea for a new model to be added.
+Please use [discussions](https://github.com/ceramicstudio/datamodels/discussions) to [talk about existing models](https://github.com/ceramicstudio/datamodels/discussions/categories/models), submit [ideas for new ones](https://github.com/ceramicstudio/datamodels/discussions/categories/ideas), present [examples of projects using models](https://github.com/ceramicstudio/datamodels/discussions/categories/show-and-tell) or simply [ask questions](https://github.com/ceramicstudio/datamodels/discussions/categories/q-a).
 
 ## Pull requests
 
