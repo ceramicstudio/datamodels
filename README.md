@@ -2,7 +2,7 @@
 
 This repository serves as registry for DataModels published as npm packages.
 
-If you are node already familiar with DataModels, you can get started by [reading the documentation](https://developers.ceramic.network/tools/glaze/datamodel/), otherwise head over to the [registry index](INDEX.md) to see the list of available packages.
+If you are not already familiar with DataModels, you can get started by [reading the documentation](https://developers.ceramic.network/tools/glaze/datamodel/), otherwise head over to the [registry index](INDEX.md) to see the list of available packages.
 
 ## [Index](INDEX.md)
 
