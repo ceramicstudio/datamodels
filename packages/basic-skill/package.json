@@ -1,0 +1,39 @@
+{
+  "name": "@datamodels/basic-skill",
+  "version": "0.0.1",
+  "author": "Ben Razor",
+  "license": "(Apache-2.0 OR MIT)",
+  "homepage": "https://github.com/ceramicstudio/datamodels#readme",
+  "keywords": ["ceramic","data","model","skill","credential"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ceramicstudio/datamodels",
+    "directory": "packages/basic-skill"
+  },
+  "main": "dist/model.cjs",
+  "module": "dist/model.mjs",
+  "typings": "dist/model.d.ts",
+  "exports": {
+    "import": "./dist/model.mjs",
+    "require": "./dist/model.cjs",
+    "default": "./dist/model.cjs"
+  },
+  "files": [
+    "dist",
+    "schemas",
+    "types"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "types": "del types && json2ts -i schemas -o types",
+    "build": "del dist && tsc && swc src -o ./dist/model.mjs --config-file ../../swc.esm.json && swc src -o ./dist/model.cjs --config-file ../../swc.cjs.json",
+    "lint": "eslint --fix",
+    "prepare": "yarn build",
+    "prepublishOnly": "package-check"
+  },
+  "dependencies": {
+    "@glazed/types": "^0.1.3"
+  }
+}
