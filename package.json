@@ -14,6 +14,7 @@
     "@skypack/package-check": "^0.2.2",
     "@swc/cli": "^0.1.49",
     "@swc/core": "^1.2.85",
+    "@types/express-serve-static-core": "^4.17.21",
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
