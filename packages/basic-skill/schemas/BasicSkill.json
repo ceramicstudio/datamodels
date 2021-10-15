@@ -44,12 +44,12 @@
         },
         "issuedDate": {
             "type": "string",
-            "description": "The date the skill was obtained.",
+            "description": "The date the skill was obtained (ISO8601 DateTime format).",
             "format": "date-time"
         },
         "expiresDate": {
             "type": "string",
-            "description": "The date the skill expires / must be renewed.",
+            "description": "The date the skill expires / must be renewed (ISO8601 DateTime format).",
             "format": "date-time"
         },
         "issuerVerification": {
