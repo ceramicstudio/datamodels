@@ -4,12 +4,7 @@
   "author": "Ben Razor",
   "license": "(Apache-2.0 OR MIT)",
   "homepage": "https://github.com/ceramicstudio/datamodels#readme",
-  "keywords": [
-    "ceramic",
-    "data",
-    "model",
-    "skills"
-  ],
+  "keywords": ["ceramic","data","model"],
   "repository": {
     "type": "git",
     "url": "https://github.com/ceramicstudio/datamodels",
