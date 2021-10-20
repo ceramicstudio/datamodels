@@ -1,18 +1,19 @@
 # Basic Profile DataModel
 
-DataModel implementation of the **Basic Profile** schema and definition specified in [CIP-19](https://github.com/ceramicnetwork/CIP/blob/main/CIPs/CIP-19/CIP-19.md).
+DataModel implementation of tokenlist
 
 ## Installation
 
 ```sh
-npm install -D @datamodels/identity-profile-basic
+npm install -D @datamodels/token-list
+/
 ```
 
 ## Rationale
 
-The **Basic Profile** contains a DID's basic profile information.
+DataModel implementation of tokenlist
 
-By standardizing profile information for DIDs, the Basic Profile simplifies how applications can view and display the profiles of their users.
+By standardizing tokenlist information for DIDs, the Basic Profile simplifies how applications can view and display the profiles of their users.
 
 **A profile is one of the most important aspects to identity**: Profiles are often most associated with identity, and the Basic Profile serves as the standard profile for a DID that can be used everywhere across the web.
 
