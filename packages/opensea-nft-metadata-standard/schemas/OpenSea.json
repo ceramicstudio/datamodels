@@ -1,0 +1,44 @@
+{
+    "title": "OpenSeaNftMetadata",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The name schema"
+        },
+        "image": {
+          "type": "string",
+          "title": "The image schema"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "trait_type",
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "type": ["number","string"]
+              },
+              "trait_type": {
+                "type": "string"
+              },
+              "display_type": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "description": {
+          "type": "string",
+          "title": "The description schema"
+        },
+        "external_url": {
+          "type": "string",
+          "title": "The external_url schema"
+        }
+    }
+}

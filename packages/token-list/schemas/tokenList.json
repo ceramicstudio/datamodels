@@ -1,0 +1,219 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Token List",
+    "description": "Schema for lists of tokens compatible with the Uniswap Interface",
+    "definitions": {
+      "Version": {
+        "type": "object",
+        "description": "The version of the list, used in change detection",
+        "properties": {
+          "major": {
+            "type": "integer",
+            "description": "The major version of the list. Must be incremented when tokens are removed from the list or token addresses are changed."
+          },
+          "minor": {
+            "type": "integer",
+            "description": "The minor version of the list. Must be incremented when tokens are added to the list."
+          },
+          "patch": {
+            "type": "integer",
+            "description": "The patch version of the list. Must be incremented for any changes to the list."
+          }
+        },
+        "required": [
+          "major",
+          "minor",
+          "patch"
+        ]
+      },
+      "TagIdentifier": {
+        "type": "string",
+        "description": "The unique identifier of a tag"
+      },
+      "ExtensionIdentifier": {
+        "type": "string",
+        "description": "The name of a token extension property"
+      },
+      "ExtensionMap": {
+        "type": "object",
+        "description": "An object containing any arbitrary or vendor-specific token metadata",
+        "propertyNames": {
+          "$ref": "#/definitions/ExtensionIdentifier"
+        },
+        "additionalProperties": {
+          "$ref": "#/definitions/ExtensionValue"
+        }
+      },
+      "ExtensionPrimitiveValue": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "ExtensionValue": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/ExtensionPrimitiveValue"
+          },
+          {
+            "type": "object",
+            "propertyNames": {
+              "$ref": "#/definitions/ExtensionIdentifier"
+            },
+            "additionalProperties": {
+              "$ref": "#/definitions/ExtensionValueInner0"
+            }
+          }
+        ]
+      },
+      "ExtensionValueInner0": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/ExtensionPrimitiveValue"
+          },
+          {
+            "type": "object",
+            "propertyNames": {
+              "$ref": "#/definitions/ExtensionIdentifier"
+            },
+            "additionalProperties": {
+              "$ref": "#/definitions/ExtensionValueInner1"
+            }
+          }
+        ]
+      },
+      "ExtensionValueInner1": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/ExtensionPrimitiveValue"
+          }
+        ]
+      },
+      "TagDefinition": {
+        "type": "object",
+        "description": "Definition of a tag that can be associated with a token via its identifier",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the tag"
+          },
+          "description": {
+            "type": "string",
+            "description": "A user-friendly description of the tag"
+          }
+        },
+        "required": [
+          "name",
+          "description"
+        ]
+      },
+      "TokenInfo": {
+        "type": "object",
+        "description": "Metadata for a single token in a token list",
+        "properties": {
+          "chainId": {
+            "type": "integer",
+            "description": "The chain ID of the Ethereum network where this token is deployed"
+          },
+          "address": {
+            "type": "string",
+            "description": "The checksummed address of the token on the specified chain ID"
+          },
+          "decimals": {
+            "type": "integer",
+            "description": "The number of decimals for the token balance"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the token"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "The symbol for the token; must be alphanumeric"
+          },
+          "logoURI": {
+            "type": "string",
+            "description": "A URI to the token logo asset; if not set, interface will attempt to find a logo based on the token address; suggest SVG or PNG of size 64x64"
+          },
+          "tags": {
+            "type": "array",
+            "description": "An array of tag identifiers associated with the token; tags are defined at the list level",
+            "items": {
+              "$ref": "#/definitions/TagIdentifier"
+            }
+          },
+          "extensions": {
+            "$ref": "#/definitions/ExtensionMap"
+          }
+        },
+        "required": [
+          "chainId",
+          "address",
+          "decimals",
+          "name",
+          "symbol"
+        ]
+      }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "The name of the token list"
+      },
+      "timestamp": {
+        "type": "string",
+        "format": "date-time",
+        "description": "The timestamp of this list version; i.e. when this immutable version of the list was created"
+      },
+      "version": {
+        "$ref": "#/definitions/Version"
+      },
+      "tokens": {
+        "type": "array",
+        "description": "The list of tokens included in the list",
+        "items": {
+          "$ref": "#/definitions/TokenInfo"
+        }
+      },
+      "keywords": {
+        "type": "array",
+        "description": "Keywords associated with the contents of the list; may be used in list discoverability",
+        "items": {
+          "type": "string",
+          "description": "A keyword to describe the contents of the list"
+        }
+      },
+      "tags": {
+        "type": "object",
+        "description": "A mapping of tag identifiers to their name and description",
+        "propertyNames": {
+          "$ref": "#/definitions/TagIdentifier"
+        },
+        "additionalProperties": {
+          "$ref": "#/definitions/TagDefinition"
+        }
+      },
+      "logoURI": {
+        "type": "string",
+        "description": "A URI for the logo of the token list; prefer SVG or PNG of size 256x256"
+      }
+    },
+    "required": [
+      "name",
+      "timestamp",
+      "version",
+      "tokens"
+    ]
+  }
