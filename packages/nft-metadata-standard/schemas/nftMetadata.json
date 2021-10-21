@@ -1,0 +1,68 @@
+{
+    "title": "nftMetadata",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The name schema",
+          "description": "Name of the item."
+        },
+        "image": {
+          "type": "string",
+          "title": "The image schema",
+          "description": "This is the URL to the image of the item. Can be just about any type of image (including SVGs, which will be cached into PNGs by OpenSea), and can be IPFS URLs or paths. We recommend using a 350 x 350 image."
+        },
+        "image_data": {
+          "type": "string",
+          "title": "Raw SVG image data,",
+          "description": "aw SVG image data, if you want to generate images on the fly (not recommended). Only use this if you're not including the image parameter."
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "trait_type",
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "type": ["number","string"]
+              },
+              "trait_type": {
+                "type": "string"
+              },
+              "display_type": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "description": {
+          "type": "string",
+          "title": "The description schema",
+          "description": "A human readable description of the item. Markdown is supported."
+        },
+        "external_url": {
+          "type": "string",
+          "title": "The external_url schema",
+          "description": "his is the URL to the image of the item. Can be just about any type of image (including SVGs, which will be cached into PNGs by OpenSea), and can be IPFS URLs or paths. We recommend using a 350 x 350 image."
+        },
+        "background_color": {
+          "type": "string",
+          "title": "background color",
+          "description": "Background color of the item on OpenSea. Must be a six-character hexadecimal without a pre-pended #."
+        },
+        "animation_url":{
+          "type": "string",
+          "title": "animation url",
+          "description": "A URL to a multi-media attachment for the item. The file extensions GLTF, GLB, WEBM, MP4, M4V, OGV, and OGG are supported, along with the audio-only extensions MP3, WAV, and OGA. Animation_url also supports HTML pages, allowing you to build rich experiences and interactive NFTs using JavaScript canvas, WebGL, and more. Scripts and relative paths within the HTML page are now supported. However, access to browser extensions is not supported."
+        },
+        "youtube_url": {
+          "type": "string",
+          "title": "YouTube video",
+          "description": "A URL to a YouTube video."
+        }
+    }
+}
