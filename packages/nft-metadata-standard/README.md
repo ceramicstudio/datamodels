@@ -14,13 +14,13 @@ The ** NFT metadata standard ** contains a DID's basic profile information.
 
 By standardizing profile information for DIDs, th NFT metadata standard  simplifies how applications can view and display the profiles of their users.
 
-**NFT metadata standard**: Profiles are often most associated with identity, and the Basic Profile serves as the standard profile for a DID that can be used everywhere across the web.
+**NFT metadata standard**: basica schame for nft metadata using the [opensa sea standards](https://docs.opensea.io/docs/metadata-standards)
 
-**DID-agnostic support:** Since Ceramic documents can be created and controlled by any DID, the Basic Profile can be used in conjunction with any DID method.
+**DID-agnostic support:** Since Ceramic documents can be created and controlled by any DID, the NFT metadata standard can be used in conjunction with any DID method.
 
 ## Schemas
 
-### [BasicProfile](./schemas/BasicProfile.json)
+### [BasicProfile](./schemas/nftMetadata.json)
 
 ## License
 
