@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "SocialConnection",
+  "type": "object",
+  "$defs": {
+    "connection": {
+      "type": "object",
+      "properties": {
+        "connectionType": {
+          "type": "string",
+          "maxLength": 10,
+          "description": "The type of this connection e.g. follow/own."
+        },
+        "target": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "The target of such connection e.g. DID or address."
+        },
+        "namespace": {
+          "type": "string",
+          "maxLength": 30,
+          "description": "The namespace of this connection."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date",
+          "maxLength": 10,
+          "description": "The date of this connection."
+        },
+        "alias": {
+          "type": "string",
+          "maxLength": 30,
+          "description": "The alias of this target."
+        }
+      }
+    }
+  },
+  "properties": {
+    "outboundLink": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/connection"
+      }
+    }
+  }
+}
