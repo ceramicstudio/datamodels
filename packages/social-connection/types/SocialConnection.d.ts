@@ -6,22 +6,21 @@
  */
 
 export interface SocialConnection {
-  outboundLink?: Connection[];
-  [k: string]: unknown;
+  outboundLink: Connection[];
 }
 export interface Connection {
   /**
    * The type of this connection e.g. follow/own.
    */
-  connectionType?: string;
+  connectionType: string;
   /**
    * The target of such connection e.g. DID or address.
    */
-  target?: string;
+  target: string;
   /**
    * The namespace of this connection.
    */
-  namespace?: string;
+  namespace: string;
   /**
    * The date of this connection.
    */

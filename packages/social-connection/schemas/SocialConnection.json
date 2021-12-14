@@ -32,7 +32,12 @@
           "maxLength": 30,
           "description": "The alias of this target."
         }
-      }
+      },
+      "required": [
+        "target",
+        "namespace",
+        "connectionType"
+      ]
     }
   },
   "properties": {
@@ -42,5 +47,9 @@
         "$ref": "#/$defs/connection"
       }
     }
-  }
+  },
+  "additionalProperties": false,
+  "required": [
+    "outboundLink"
+  ]
 }
