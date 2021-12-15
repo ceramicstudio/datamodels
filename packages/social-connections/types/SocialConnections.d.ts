@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface SocialConnection {
+export interface SocialConnections {
   outboundLink: Connection[];
 }
 export interface Connection {
