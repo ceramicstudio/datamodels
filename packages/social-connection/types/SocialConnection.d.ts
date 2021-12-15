@@ -29,5 +29,4 @@ export interface Connection {
    * The alias of this target.
    */
   alias?: string;
-  [k: string]: unknown;
 }

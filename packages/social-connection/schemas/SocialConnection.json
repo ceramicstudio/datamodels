@@ -5,6 +5,7 @@
   "$defs": {
     "connection": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "connectionType": {
           "type": "string",
