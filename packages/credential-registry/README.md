@@ -10,7 +10,7 @@ npm install -D @datamodels/credential-registry
 
 ## Rationale
 
-The [CredentialRegistry] holds the list of claimed [ClaimedCredentials] and the [VerifiableCredentials] issued by the user",
+The CredentialRegistry holds the list of claimed [ClaimedCredentials](../claimed-credential/) and the [VerifiableCredentials](../verifiable-credential/) issued by the user",
 
 ## Schemas
 

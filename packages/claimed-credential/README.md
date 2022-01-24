@@ -10,7 +10,7 @@ npm install -D @datamodels/claimed-credential
 
 ## Rationale
 
-A [ClaimedCredential] represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a [VerifiableCredential].
+A ClaimedCredential represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a [VerifiableCredential](../verifiable-credential/).
 
 ## Schemas
 
