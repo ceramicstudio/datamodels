@@ -12,6 +12,8 @@ npm install -D @datamodels/verifiable-credential
 
 A VerifiableCredential is fact-checking review/attestation of claims made (or reported) in a [ClaimedCredential](../claimed-credential/). This tries to follow the [W3C VC datamodel](https://www.w3.org/TR/vc-data-model), but adds alternative solidity compliant syntax for some conflicting property names.
 
+Tiles created using this schema can then be linked to a DID issued credentials on the [CredentialRegistry](../credential-registry/).
+
 ## Schemas
 
 ### [VerifiableCredential](./schemas/VerifiableCredential.json)

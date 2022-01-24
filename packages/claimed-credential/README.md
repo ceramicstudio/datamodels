@@ -12,6 +12,8 @@ npm install -D @datamodels/claimed-credential
 
 A ClaimedCredential represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a [VerifiableCredential](../verifiable-credential/).
 
+Tiles created using this schema can then be linked to a DID claimed credentials on the [CredentialRegistry](../credential-registry/).
+
 ## Schemas
 
 ### [ClaimedCredential](./schemas/ClaimedCredential.json)
