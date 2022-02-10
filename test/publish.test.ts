@@ -5,9 +5,10 @@ import { constants } from 'node:fs'
 import { access, readdir, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import type { CeramicApi } from '@ceramicnetwork/common'
-import { publishEncodedModel } from '@glazed/devtools'
+import { publishEncodedModel, isSecureSchema } from '@glazed/devtools'
 import type { PublishedModel } from '@glazed/types'
 import { jest } from '@jest/globals'
+import type { JSONSchemaType } from 'ajv'
 
 declare global {
   var ceramic: CeramicApi
@@ -82,6 +83,8 @@ for (const [name, path] of Object.entries(packages)) {
       const loaded = await loadPublishedSchemas(published.schemas)
       for (const [name, schema] of Object.entries(schemas)) {
         expect(loaded[name]).toEqual(schema)
+        // Ensure schema is secure
+        expect(isSecureSchema(schema as JSONSchemaType<any>)).toBe(true)
       }
     }
   })
