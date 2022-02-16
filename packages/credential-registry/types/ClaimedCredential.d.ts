@@ -8,16 +8,30 @@
 export type CeramicDocId = string;
 
 /**
- * A [[ClaimedCredential]] represents a specific, factually-oriented claim that could be the CredentialSubject in a [[VerifiableCredential]]
+ * A [[ClaimedCredential]] represents a specific, factually-oriented claim that could be the Id and CredentialSubject of a [[VerifiableCredential]]
  */
 export interface ClaimedCredential {
   did: string;
   type: string;
-  typeSchema?: CeramicDocId;
+  typeSchema?: string;
   value?: {
+    keccak256?: string;
+    value?: string;
+    description?: string;
+    country?: string;
+    city?: string;
+    postalCode?: string;
+    date?: string;
+    time?: string;
+    startDate?: string;
+    endDate?: string;
+    issuanceDate?: string;
+    expirationDate?: string;
+    issuingEntity?: string;
+    imageIPFS?: string;
     [k: string]: unknown;
   };
-  encrypted: JWE;
+  encrypted?: JWE;
   verifiableCredentials?: CeramicDocId[];
 }
 export interface JWE {

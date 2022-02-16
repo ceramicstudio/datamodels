@@ -12,9 +12,7 @@ export type CeramicDocId = string;
  */
 export interface VerifiableCredential {
   "@context"?: string[];
-  _context?: string;
   type?: string[];
-  _type?: string;
   id: CeramicDocId;
   issuer: {
     id: string;
@@ -29,15 +27,40 @@ export interface VerifiableCredential {
   credentialSchema: {
     id: string;
     type?: string;
-    _type?: string;
-    [k: string]: unknown;
   };
   issuanceDate: string;
   expirationDate?: string;
   proof?: {
+    type: string;
+    verificationMethod?: string;
+    ethereumAddress?: string;
+    created?: string;
+    proofPurpose?: string;
+    proofValue?: string;
+    eip712?: {
+      domain: {
+        chainId: number;
+        name: string;
+        version: string;
+        verifyingContract?: string;
+      };
+      types: {
+        [k: string]: unknown;
+      };
+      primaryType: string;
+    };
     [k: string]: unknown;
   };
   evidence?: {
-    [k: string]: unknown;
+    id: string;
+    type?: string[];
+    verifier?: string;
+    evidenceDocument?: string;
+    subjectPresence?: string;
+    documentPresence?: string;
+  };
+  credentialStatus?: {
+    id: string;
+    type?: string;
   };
 }
