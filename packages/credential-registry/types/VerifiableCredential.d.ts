@@ -11,8 +11,8 @@ export type CeramicDocId = string;
  * A [[VerifiableCredential]] is fact-checking review/attestation of claims made (or reported) in a [[ClaimedCredential]]
  */
 export interface VerifiableCredential {
-  "@context"?: string[];
-  type?: string[];
+  "@context": string[];
+  type: string[];
   id: CeramicDocId;
   issuer: {
     id: string;
@@ -26,7 +26,7 @@ export interface VerifiableCredential {
   };
   credentialSchema: {
     id: string;
-    type?: string;
+    type: string;
   };
   issuanceDate: string;
   expirationDate?: string;

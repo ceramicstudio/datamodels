@@ -8,9 +8,8 @@
 export type CeramicDocId = string;
 
 /**
- * The [[CredentialRegistry]] holds the list of claimed [[ClaimedCredentials]] and the [[VerifiableCredentials]] issued by the user
+ * The [[IssuedCredentials]] holds the list of [[VerifiableCredential]] issued by the user
  */
-export interface CredentialRegistry {
-  claimed?: CeramicDocId[];
+export interface IssuedCredentials {
   issued?: CeramicDocId[];
 }

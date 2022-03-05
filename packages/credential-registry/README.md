@@ -10,7 +10,7 @@ npm install -D @datamodels/credential-registry
 
 ## Rationale
 
-The CredentialRegistry holds the list of claimed [ClaimedCredentials](./schemas/ClaimedCredential.json) and the [VerifiableCredentials](./schemas/VerifiableCredential.json) issued by the user.
+The CredentialRegistry data-model holds the list of claimed [ClaimedCredentials](./schemas/ClaimedCredential.json) and the [VerifiableCredentials](./schemas/VerifiableCredential.json) issued by the user.
 
 A ClaimedCredential represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a [VerifiableCredential](./schemas/VerifiableCredential.json)
 
@@ -18,29 +18,36 @@ A VerifiableCredential is fact-checking review/attestation of claims made (or re
 
 ## Schemas
 
-### [CredentialRegistry](./schemas/CredentialRegistry.json)
+### [ClaimedCredentials](./schemas/ClaimedCredentials.json)
 
-The CredentialRegistry schema defines the format of a document that contains the properties listed below. Properties not defined in the schema _cannot_ be included in the CredentialRegistry.
+The ClaimedCredentials schema defines the format of a document that contains the properties listed below. Properties not defined in the schema _cannot_ be included in the ClaimedCredentials.
 
-| Property | Description                             | Value                                                    | Max Size | Required | Example |
-| -------- | --------------------------------------- | -------------------------------------------------------- | -------- | -------- | ------- |
-| claimed  | List of claims made by this DID         | array of ceramic:// links to ClaimedCredentials tiles    |          | false    |         |
-| issued   | List of attestations issued by this DID | array of ceramic:// links to VerifiableCredentials tiles |          | false    |         |
+| Property | Description                     | Value                                                 | Max Size | Required | Example |
+| -------- | ------------------------------- | ----------------------------------------------------- | -------- | -------- | ------- |
+| claimed  | List of claims made by this DID | array of ceramic:// links to ClaimedCredentials tiles |          | false    |         |
 
 ### [ClaimedCredential](./schemas/ClaimedCredential.json)
 
 The ClaimedCredential schema defines the format of a document that contains the properties listed below. Properties not defined in the schema _cannot_ be included in the ClaimedCredential.
 
-| Property              | Description                                                       | Value                                                                                                                                                                                                             | Max Size | Required | Example |
-| --------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
-| did                   | DID that makes the claim                                          | string                                                                                                                                                                                                            |          | true     |         |
-| type                  | Claim type / Alias of claim type                                  | string                                                                                                                                                                                                            |          | true     |         |
-| typeSchema            | Claim type schema                                                 | URI of a schema for the Claim payload object                                                                                                                                                                      |          | false    |         |
-| value                 | Claim payload                                                     | object with optional properties: "keccak256","value","description", "country", "city", "postalCode", "date", "time", "startDate", "endDate", "issuanceDate", "expirationDate", "issuingEntity", "imageIPFS", etc. |          | false    |         |
-| encrypted             | JWE encrypted claim value                                         | JWE object                                                                                                                                                                                                        |          | true     |         |
-| verifiableCredentials | List of attestations received for this claim by different issuers | array of ceramic:// links to VerifiableCredential tiles                                                                                                                                                           |          | false    |         |
+| Property              | Description                                                       | Value                                                                                                                                                                                                             | Max Size | Required | Example                                               |                                                                                              |
+| --------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| did                   | DID that makes the claim                                          | string                                                                                                                                                                                                            |          | true     |                                                       |
+| type                  | Claim type / Alias of claim type                                  | string                                                                                                                                                                                                            |          | true     | "olderThan"                                           |
+| typeSchema            | Claim type schema                                                 | URI of a schema for the Claim payload object                                                                                                                                                                      |          | false    |                                                       |
+| value                 | Claim payload                                                     | object with optional properties: "keccak256","value","description", "country", "city", "postalCode", "date", "time", "startDate", "endDate", "issuanceDate", "expirationDate", "issuingEntity", "imageIPFS", etc. |          | false    | public: { description: "Older than 21", value: "21" } | private: { keccak256 : '0xc776c568c5e2f809dc6566fcf7d45cd4bd5c3ca2b5538e1218f22e0a4e4f3866'} |
+| encrypted             | JWE encrypted claim value                                         | JWE object                                                                                                                                                                                                        |          | true     |                                                       |
+| verifiableCredentials | List of attestations received for this claim by different issuers | array of ceramic:// links to VerifiableCredential tiles                                                                                                                                                           |          | false    |                                                       |
 
 Tiles created using this schema can then be linked to a DID's claimed credentials on the [CredentialRegistry](../credential-registry/) definition.
+
+### [IssuedCredentials](./schemas/ClaimedCredentials.json)
+
+The IssuedCredentials schema defines the format of a document that contains the properties listed below. Properties not defined in the schema _cannot_ be included in the IssuedCredentials.
+
+| Property | Description                             | Value                                                    | Max Size | Required | Example |
+| -------- | --------------------------------------- | -------------------------------------------------------- | -------- | -------- | ------- |
+| issued   | List of attestations issued by this DID | array of ceramic:// links to VerifiableCredentials tiles |          | false    |         |
 
 ### [VerifiableCredential](./schemas/VerifiableCredential.json)
 
