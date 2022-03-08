@@ -14,7 +14,7 @@ The CredentialRegistry data-model holds the list of claimed [ClaimedCredentials]
 
 A ClaimedCredential represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a [VerifiableCredential](./schemas/VerifiableCredential.json).  The ClaimedCredential is stored in the DidDataStore of the *subject* of the credential, and is controlled by the credential subject's DID.
 
-A VerifiableCredential is fact-checking review/attestation of claims made (or reported) in a [ClaimedCredential](./schemas/ClaimedCredential.json), following the [W3C VC datamodel](https://www.w3.org/TR/vc-data-model).
+A VerifiableCredential is fact-checking review/attestation of claims made (or reported) in a [ClaimedCredential](./schemas/ClaimedCredential.json), following the [W3C VC datamodel](https://www.w3.org/TR/vc-data-model).  The ClaimedCredential is stored in the DidDataStore of the *issuer* of the credential, and is controlled by the issuer's DID.
 
 ## Schemas
 
