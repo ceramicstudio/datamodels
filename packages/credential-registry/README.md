@@ -12,7 +12,7 @@ npm install -D @datamodels/credential-registry
 
 The CredentialRegistry data-model holds the list of claimed [ClaimedCredentials](./schemas/ClaimedCredential.json) and the [VerifiableCredentials](./schemas/VerifiableCredential.json) issued by the user.
 
-A ClaimedCredential represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a [VerifiableCredential](./schemas/VerifiableCredential.json)
+A ClaimedCredential represents a specific, factually-oriented claim that could be used as the Id and CredentialSubject of a [VerifiableCredential](./schemas/VerifiableCredential.json).  The ClaimedCredential is stored in the DidDataStore of the *subject* of the credential, and is controlled by the credential subject's DID.
 
 A VerifiableCredential is fact-checking review/attestation of claims made (or reported) in a [ClaimedCredential](./schemas/ClaimedCredential.json), following the [W3C VC datamodel](https://www.w3.org/TR/vc-data-model).
 
