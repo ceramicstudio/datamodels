@@ -9,10 +9,10 @@ function getURL(folder) {
 
 export default class Environment extends CeramicEnvironment {
   async setup() {
-    const [packages] = await Promise.all([readdir(getURL('packages')), super.setup()])
+    const [packages] = await Promise.all([readdir(getURL('models')), super.setup()])
     this.global.ceramic.did = new DID({ resolver: getResolver() })
     this.global.packages = Object.fromEntries(
-      packages.map((pkg) => [pkg, getURL(`packages/${pkg}`).href])
+      packages.map((pkg) => [pkg, getURL(`models/${pkg}`).href])
     )
   }
 }

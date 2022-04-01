@@ -1,6 +1,6 @@
 {
   "name": "@datamodels/social-connections",
-  "version": "0.2.0-alpha.0",
+  "version": "0.2.0-rc.0",
   "author": "CyberConnect",
   "license": "(Apache-2.0 OR MIT)",
   "homepage": "https://github.com/ceramicstudio/datamodels#readme",
@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ceramicstudio/datamodels",
-    "directory": "packages/social-connections"
+    "directory": "models/social-connections"
   },
   "type": "module",
   "main": "dist/index.js",
@@ -25,7 +25,7 @@
     "types"
   ],
   "engines": {
-    "node": ">=16"
+    "node": ">=14.14"
   },
   "sideEffects": false,
   "scripts": {
@@ -39,6 +39,6 @@
     "prepublishOnly": "package-check"
   },
   "dependencies": {
-    "@glazed/types": "^0.2.0-alpha.0"
+    "@glazed/types": "^0.2.0-rc.0"
   }
 }

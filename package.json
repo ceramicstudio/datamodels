@@ -2,12 +2,13 @@
   "name": "datamodels",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "models/*",
+    "shapes/*"
   ],
   "type": "module",
   "scripts": {
     "lint": "lerna run lint --parallel",
-    "prepare": "lerna run prepare --parallel",
+    "prepare": "lerna run prepare",
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
   },
   "devDependencies": {

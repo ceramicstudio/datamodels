@@ -1,6 +1,6 @@
 {
   "name": "@datamodels/identity-accounts-crypto",
-  "version": "0.2.0-alpha.0",
+  "version": "0.2.0-rc.0",
   "author": "3Box Labs",
   "license": "(Apache-2.0 OR MIT)",
   "homepage": "https://github.com/ceramicstudio/datamodels#readme",
@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ceramicstudio/datamodels",
-    "directory": "packages/identity-accounts-crypto"
+    "directory": "models/identity-accounts-crypto"
   },
   "type": "module",
   "main": "dist/index.js",
@@ -26,7 +26,7 @@
     "types"
   ],
   "engines": {
-    "node": ">=16"
+    "node": ">=14.14"
   },
   "sideEffects": false,
   "scripts": {
@@ -40,6 +40,6 @@
     "prepublishOnly": "package-check"
   },
   "dependencies": {
-    "@glazed/types": "^0.2.0-alpha.0"
+    "@glazed/types": "^0.2.0-rc.0"
   }
 }
