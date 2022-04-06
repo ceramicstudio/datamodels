@@ -5,11 +5,11 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type CeramicDocId = string
+export type VerifiableCredential = string;
 
 /**
- * The [[ClaimedCredentials]] holds the list of claimed [[ClaimedCredential]] by the user
+ * The list of [[VerifiableCredential]] received from issuers
  */
-export interface ClaimedCredentials {
-  claimed?: CeramicDocId[]
+export interface HeldCredentials {
+  held?: VerifiableCredential[];
 }

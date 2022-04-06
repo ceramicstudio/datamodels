@@ -5,15 +5,13 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type CeramicDocId = string;
-
 /**
- * A [[VerifiableCredential]] is fact-checking review/attestation of claims made (or reported) in a [[ClaimedCredential]]
+ * A [[VerifiableCredential]] is fact-checking review/attestation of claims made about a credentialSubject
  */
 export interface VerifiableCredential {
   "@context": string[];
   type: string[];
-  id: CeramicDocId;
+  id: string;
   issuer: {
     id: string;
     ethereumAddress?: string;
@@ -61,6 +59,6 @@ export interface VerifiableCredential {
   };
   credentialStatus?: {
     id: string;
-    type?: string;
+    type: string;
   };
 }
