@@ -1,6 +1,6 @@
 {
   "name": "@datamodels/3id-keychain",
-  "version": "0.2.0-rc.0",
+  "version": "0.2.0",
   "author": "3Box Labs",
   "license": "(Apache-2.0 OR MIT)",
   "homepage": "https://github.com/ceramicstudio/datamodels#readme",
@@ -39,6 +39,6 @@
     "prepublishOnly": "package-check"
   },
   "dependencies": {
-    "@glazed/types": "^0.2.0-rc.0"
+    "@glazed/types": "^0.2.0"
   }
 }

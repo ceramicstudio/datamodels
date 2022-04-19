@@ -12,8 +12,8 @@
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
   },
   "devDependencies": {
-    "@ceramicnetwork/common": "^2.0.0-alpha.0",
-    "@glazed/devtools": "^0.2.0-alpha.0",
+    "@ceramicnetwork/common": "^2.0.0",
+    "@glazed/devtools": "^0.2.0",
     "@skypack/package-check": "^0.2.2",
     "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.136",
@@ -22,13 +22,13 @@
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "del-cli": "^4.0.1",
-    "dids": "^3.0.0-alpha.0",
+    "dids": "^3.0.0",
     "eslint": "^8.8.0",
     "eslint-config-3box": "^0.4.0",
     "jest": "^27.2.4",
-    "jest-environment-ceramic": "^0.15.0-alpha.0",
+    "jest-environment-ceramic": "^0.15.0",
     "json-schema-to-typescript": "^10.1.5",
-    "key-did-resolver": "^2.0.0-alpha.0",
+    "key-did-resolver": "^2.0.0",
     "lerna": "^4.0.0",
     "prettier": "^2.4.1",
     "typescript": "^4.4.3"
