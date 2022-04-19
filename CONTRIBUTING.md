@@ -41,7 +41,7 @@ Packages will be published manually by 3Box Labs to the npm registry after being
 Use the same template as existing packages to ensure full compatibility, including:
 
 - Exporting the JSON-encoded model under the `model` name
-- Providing both ESM and CommonJS exports
+- Providing only ESM exports
 - Providing the source JSON schemas in the `schemas` folder
 - Providing TypeScript declarations
 

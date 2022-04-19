@@ -5,8 +5,8 @@ import { constants } from 'node:fs'
 import { access, readdir, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import type { CeramicApi } from '@ceramicnetwork/common'
-import { publishEncodedModel, isSecureSchema } from '@glazed/devtools'
-import type { PublishedModel } from '@glazed/types'
+import { deployEncodedModel, isSecureSchema } from '@glazed/devtools'
+import type { ModelAliases } from '@glazed/types'
 import { jest } from '@jest/globals'
 import type { JSONSchemaType } from 'ajv'
 
@@ -15,7 +15,7 @@ declare global {
   var packages: Record<string, string>
 }
 
-const expectedPublishedModel = expect.objectContaining({
+const expectedModelAliases = expect.objectContaining({
   definitions: expect.any(Object),
   schemas: expect.any(Object),
   tiles: expect.any(Object),
@@ -23,9 +23,9 @@ const expectedPublishedModel = expect.objectContaining({
 
 jest.setTimeout(15000)
 
-async function publishModel(path: string): Promise<PublishedModel> {
+async function deployModel(path: string): Promise<ModelAliases> {
   const { model } = await import(path)
-  return await publishEncodedModel(ceramic, model)
+  return await deployEncodedModel(ceramic, model)
 }
 
 async function readSchema(path: string): Promise<unknown> {
@@ -56,7 +56,7 @@ async function readPackageSchemas(path: string): Promise<Record<string, unknown>
   )
 }
 
-async function loadPublishedSchemas(
+async function loadDeployedSchemas(
   schemas: Record<string, string>
 ): Promise<Record<string, unknown>> {
   const loaded: Record<string, unknown> = {}
@@ -71,16 +71,16 @@ async function loadPublishedSchemas(
 
 for (const [packageName, path] of Object.entries(packages)) {
   test.concurrent(packageName, async () => {
-    const [published, schemas] = await Promise.all([publishModel(path), readPackageSchemas(path)])
+    const [aliases, schemas] = await Promise.all([deployModel(path), readPackageSchemas(path)])
 
-    // Published model matches expected shape
-    expect(published).toEqual(expectedPublishedModel)
-    // Published model is not empty (at least one schema)
-    expect(Object.keys(published.schemas)).not.toHaveLength(0)
+    // Deployed model aliases matches expected shape
+    expect(aliases).toEqual(expectedModelAliases)
+    // Deployed model is not empty (at least one schema)
+    expect(Object.keys(aliases.schemas)).not.toHaveLength(0)
 
-    // Ensure schemas defined in package match the published ones
+    // Ensure schemas defined in package match the deployed ones
     if (schemas != null) {
-      const loaded = await loadPublishedSchemas(published.schemas)
+      const loaded = await loadDeployedSchemas(aliases.schemas)
       for (const [alias, schema] of Object.entries(schemas)) {
         expect(loaded[alias]).toEqual(schema)
         // Exclude BasicProfile as schema is incorrect
