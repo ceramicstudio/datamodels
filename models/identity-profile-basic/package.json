@@ -1,26 +1,23 @@
 {
-  "name": "@datamodels/identity-accounts-web",
-  "version": "0.1.3",
+  "name": "@datamodels/identity-profile-basic",
+  "version": "0.2.0",
   "author": "3Box Labs",
   "license": "(Apache-2.0 OR MIT)",
   "homepage": "https://github.com/ceramicstudio/datamodels#readme",
   "keywords": [
     "datamodel",
-    "identity",
-    "accounts"
+    "self.id"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ceramicstudio/datamodels",
-    "directory": "packages/identity-accounts-web"
+    "directory": "models/identity-profile-basic"
   },
-  "main": "dist/model.cjs",
-  "module": "dist/model.mjs",
-  "typings": "dist/model.d.ts",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    "import": "./dist/model.mjs",
-    "require": "./dist/model.cjs",
-    "default": "./dist/model.cjs"
+    ".": "./dist/index.js"
   },
   "files": [
     "dist",
@@ -28,16 +25,20 @@
     "types"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">=14.14"
   },
+  "sideEffects": false,
   "scripts": {
     "types": "del types && json2ts -i schemas -o types",
-    "build": "del dist && tsc && swc src -o ./dist/model.mjs --config-file ../../swc.esm.json && swc src -o ./dist/model.cjs --config-file ../../swc.cjs.json",
+    "build:clean": "del dist",
+    "build:js": "swc src -d ./dist --config-file ../../.swcrc",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "yarn build:clean && yarn build:types && yarn build:js",
     "lint": "eslint --fix",
     "prepare": "yarn build",
     "prepublishOnly": "package-check"
   },
   "dependencies": {
-    "@glazed/types": "^0.1.3"
+    "@glazed/types": "^0.2.0"
   }
 }
