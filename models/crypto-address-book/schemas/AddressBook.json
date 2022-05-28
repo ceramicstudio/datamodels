@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "AddressBook",
+  "required": ["total_cnt", "contacts"],
+  "additionalProperties": false,
+  "properties": {
+    "total_cnt": {
+      "type": "integer",
+      "description": "The total number of contacts",
+      "default": 0
+    },
+    "contacts": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "required": ["name", "wallets"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The contact's name",
+            "default": ""
+          },
+          "wallets": {
+            "type": "array",
+            "description": "Collection of the contact's wallet addresses and respective networks",
+            "default": [],
+            "items": {
+              "type": "object",
+              "default": {},
+              "required": ["walletAddress", "network"],
+              "additionalProperties": false,
+              "properties": {
+                "walletAddress": {
+                  "type": "string",
+                  "default": ""
+                },
+                "network": {
+                  "type": "string",
+                  "default": ""
+                }
+              }
+            }
+          },
+          "avatar": {
+            "type": "string",
+            "description": "Optional URI of user avatar",
+            "default": ""
+          },
+          "tags": {
+            "type": "array",
+            "description": "Optional tags for the contact",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "data": {
+            "type": "object",
+            "description": "Fields to include optional arbitrary data",
+            "properties": {}
+          }
+        }
+      }
+    }
+  }
+}

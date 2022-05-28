@@ -1,0 +1,45 @@
+{
+    "name": "@datamodels/address-book",
+    "version": "0.1.0",
+    "author": "soheil",
+    "license": "(Apache-2.0 OR MIT)",
+    "homepage": "https://github.com/ceramicstudio/datamodels#readme",
+    "keywords": [
+      "datamodel",
+      "address"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ceramicstudio/datamodels",
+      "directory": "models/address-book"
+    },
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": "./dist/index.js"
+    },
+    "files": [
+      "dist",
+      "schemas",
+      "types"
+    ],
+    "engines": {
+      "node": ">=14.14"
+    },
+    "sideEffects": false,
+    "scripts": {
+      "types": "del types && json2ts -i schemas -o types",
+      "build:clean": "del dist",
+      "build:js": "swc src -d ./dist --config-file ../../.swcrc",
+      "build:types": "tsc --emitDeclarationOnly",
+      "build": "yarn build:clean && yarn build:types && yarn build:js",
+      "lint": "eslint --fix",
+      "prepare": "yarn build",
+      "prepublishOnly": "package-check"
+    },
+    "dependencies": {
+      "@glazed/types": "^0.2.0"
+    }
+  }
+  
