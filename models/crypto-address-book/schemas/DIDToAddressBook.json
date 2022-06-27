@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "DIDToAddressBook",
+    "required": ["mapping"],
+    "properties": {
+      "mapping": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["user_DID", "address_book_streamID"],
+          "properties": {
+            "user_DID": {
+              "type": "string",
+              "description": "The user's DID",
+              "default": ""
+            },
+            "address_book_streamID": {
+              "type": "string",
+              "description": "The streamID of the Address Book associated to the user",
+              "default": ""
+            }
+          }
+        }
+      }
+    }
+  }
