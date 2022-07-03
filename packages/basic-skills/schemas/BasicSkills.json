@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "BasicSkills",
+    "description": "A lightweight schema for skills and credentials",
+    "type": "object",
+    "properties": {
+        "skills": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/BasicSkill" }
+        }
+    },
+    "definitions": {
+        "BasicSkill": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "A human readable name for the skill.",
+                    "maxLength": 160
+                },
+                "id": {
+                    "type": "string",
+                    "description": "A unique identifier (e.g. uuid or uri) to allow applications to use this skill.",
+                    "maxLength": 420
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An optional description to add more details.",
+                    "maxLength": 420
+                },
+                "tags": {
+                    "description": "Tags to allow easier searching of skills.",
+                    "type": "array",
+                    "items": {
+                    "type": "string"
+                    },
+                    "uniqueItems": true
+                },
+                "image": {
+                    "type": "string",
+                    "description": "An optional image to use when displaying the skill.",
+                    "format": "uri"
+                },
+                "details": {
+                    "type": "string",
+                    "description": "A link to a document giving details about the status of the skill. E.g. terms of use / revocation status.",
+                    "format": "uri"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "A unique identifier representing an issuer of the skill (e.g. did of an institution).",
+                    "maxLength": 160
+                },
+                "issuedDate": {
+                    "type": "string",
+                    "description": "The date the skill was obtained (ISO8601 DateTime format).",
+                    "format": "date-time"
+                },
+                "expiresDate": {
+                    "type": "string",
+                    "description": "The date the skill expires / must be renewed (ISO8601 DateTime format).",
+                    "format": "date-time"
+                },
+                "issuerVerification": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "description": "The signature method (e.g. RsaSignature2018).",
+                            "maxLength": 160
+                        },
+                        "verificationMethod": {
+                            "type": "string",
+                            "description": "A resource (e.g. URI) that contains the information required to perform the verification process.",
+                            "maxLength": 420
+                        },
+                        "sig": {
+                            "type": "string",
+                            "description": "The signature to use in the verification process (e.g. JSON Web Signature).",
+                            "maxLength": 420
+                        }
+                    },
+                    "description": "A proof mechanism to verify that the issuer certifies the skill. Based on https://www.w3.org/TR/vc-data-model/#proofs-signatures."
+                }
+            },
+            "required": ["name", "id"]
+        }
+    }
+}
